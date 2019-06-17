@@ -1,0 +1,39 @@
+name:                conduit-async
+version:             0.1.0.0
+github:              "bneijt/conduit-async"
+license:             BSD3
+author:              "Bram Neijt"
+maintainer:          "bram@neijt.nl"
+copyright:           "2019 Bram Neijt"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/bneijt/conduit-async#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- conduit
+- async
+
+library:
+  source-dirs: src
+
+tests:
+  conduit-async-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - conduit-async
